@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Auction</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Online Auction Platform</h1>
+      <div id="userSection">
+        <button onclick="openRegister()">Register</button>
+        <button onclick="openLogin()">Login</button>
+        <span id="userGreeting"></span>
+      </div>
+    </header>
+
+    <main>
+      <section class="item-list">
+        <h2>Available Items</h2>
+        <div id="items">
+          <!-- Items will be dynamically loaded here -->
+        </div>
+      </section>
+
+      <section class="place-bid">
+        <h2>Place Your Bid</h2>
+        <form id="bidForm">
+          <label for="item">Select Item:</label>
+          <select id="item" required></select>
+
+          <label for="bidAmount">Bid Amount:</label>
+          <input type="number" id="bidAmount" required min="1" step="0.01" />
+
+          <button type="submit">Place Bid</button>
+        </form>
+
+        <div id="highestBid">
+          <!-- Highest bid will be displayed here -->
+        </div>
+        <div id="bidHistory">
+          <!-- Bid history will be displayed here -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal for Registration -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span onclick="closeModal('registerModal')" class="close">&times;</span>
+        <h2>Register</h2>
+        <form id="registerForm">
+          <label for="username">Username:</label>
+          <input type="text" id="registerUsername" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="registerPassword" required />
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal for Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span onclick="closeModal('loginModal')" class="close">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="username">Username:</label>
+          <input type="text" id="loginUsername" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="loginPassword" required />
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
